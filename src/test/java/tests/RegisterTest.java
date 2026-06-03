@@ -2,7 +2,9 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -18,22 +20,30 @@ public class RegisterTest extends Base{
 	WebDriver driver;
 	
 	@BeforeSuite
-	@Parameters("browser")
-	public void setUp(String browser) {
-		
-		initializeReport();
-		
-		DriverFactory.initializeDriver(browser);
-		
-		driver = DriverManger.getDriver();
+	public void startSuite()
+	{
+	    initializeReport();
 	}
-	
-	@AfterSuite
+
+	@BeforeClass
+	@Parameters("browser")
+	public void setUp(String browser)
+	{
+	    DriverFactory.initializeDriver(browser);
+
+	    driver = DriverManger.getDriver();
+	}
+
+	@AfterClass
 	public void tearDown()
 	{
-		flushReport();
-		
-		DriverFactory.quitDriver();
+	    DriverFactory.quitDriver();
+	}
+
+	@AfterSuite
+	public void endSuite()
+	{
+	    flushReport();
 	}
 	
 	@Test
