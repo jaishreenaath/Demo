@@ -47,7 +47,7 @@ public class RegisterTest extends Base{
 	}
 	
 	@Test
-	public void verifyUserRegisteration()
+	public void verifyUserRegisterationTest()
 	{
 		
 		ExtentTest test = extent.createTest("Verify user registration");
