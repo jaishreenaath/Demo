@@ -39,6 +39,8 @@ public class Base {
 	public static void flushReport()
 	{
 		extent.flush();
+		
+		// to flush extent reports
 	}
 	
 	public static void navigateToUrl(String url)
