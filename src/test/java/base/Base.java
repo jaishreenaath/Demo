@@ -113,8 +113,8 @@ public class Base {
 		
 	}
 	
-	public static String getCurrentUrl()
-	{
-	    return DriverManger.getDriver().getCurrentUrl();
-	}
+//	public static String getCurrentUrl()
+//	{
+//	    return DriverManger.getDriver().getCurrentUrl();
+//	}
 }
